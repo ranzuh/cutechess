@@ -169,6 +169,8 @@ void UciEngine::endGame(const Chess::Result& result)
 	m_ignoreThinking = true;
 	if (stopThinking())
 		ping(false);
+    
+    write("result " + result.toVerboseString());
 	ChessEngine::endGame(result);
 }
 
